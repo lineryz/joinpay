@@ -11,7 +11,6 @@
 
 namespace joinpay;
 
-use InvalidArgumentException;
 use joinpay\service\JoinPayFactoryInterface;
 use joinpay\util\RSAUtil;
 
