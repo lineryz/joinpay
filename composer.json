@@ -1,0 +1,22 @@
+{
+    "name": "lineryz/joinpay",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lineryz",
+            "email": "lineryz@126.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-openssl": "*",
+        "ext-json": "*",
+        "ext-http": "*"
+    },
+    "autoload": {
+        "joinpay\\": "src/"
+    }
+}
