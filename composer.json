@@ -17,6 +17,8 @@
         "ext-http": "*"
     },
     "autoload": {
-        "joinpay\\": "src/"
+        "psr-4": {
+            "joinpay\\": "src/"
+        }
     }
 }
