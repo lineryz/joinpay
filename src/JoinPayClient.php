@@ -11,6 +11,7 @@
 
 namespace joinpay;
 
+use GuzzleHttp\Exception\InvalidArgumentException;
 use joinpay\service\JoinPayFactoryInterface;
 use joinpay\util\RSAUtil;
 
