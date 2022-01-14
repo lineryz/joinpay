@@ -81,7 +81,7 @@ class JoinPayClient implements JoinPayFactoryInterface
         }
 
         $request = $this->defaultDriver[$driver];
-        $request = __NAMESPACE__.'\\Driver\\'.$request;
+        $request = __NAMESPACE__.'\\entity\\'.$request;
         return new $request();
     }
 
@@ -193,7 +193,8 @@ class JoinPayClient implements JoinPayFactoryInterface
      * @param $config
      */
     private function setConfig($config){
-        $config = (is_array($config) && !empty($config)) ? array_merge(__DIR__.'/Config/config.php',$config) : require_once __DIR__.'/Config/config.php';
+        $joinpayConfig = require_once __DIR__.'/config/config.php';
+        $config = (is_array($config) && !empty($config)) ? array_merge($joinpayConfig,$config) : $joinpayConfig;
         $this->app_id               = $config['app_id'] ?? '';
         $this->app_secret           = $config['app_secret'] ?? '';
         $this->app_trade_merchantNo = $config['trade_merchantNo'] ?? '';
