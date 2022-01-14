@@ -18,7 +18,8 @@ class RSAUtil
      * @param string $data
      * @return false|resource|string
      */
-    public static function getPrivateKey(string $data){
+    public static function getPrivateKey(string $data)
+    {
         if(is_file($data)){
             $keyRead = file_get_contents($data);
             $privateKey = openssl_get_privatekey($keyRead);
@@ -37,7 +38,8 @@ class RSAUtil
      * @param string $data
      * @return false|resource|string
      */
-    public static function getPublicKey(string $data){
+    public static function getPublicKey(string $data)
+    {
         if(is_file($data)){
             $keyRead = file_get_contents($data);
             $PublicKey = openssl_get_publickey($keyRead);
@@ -59,7 +61,8 @@ class RSAUtil
      *
      * @return bool|string
      */
-    public static function sign(string $data, string $key, $encodeMod = 'RSA'){
+    public static function sign(string $data, string $key, $encodeMod = 'RSA')
+    {
 
         $rsakey = self::getPrivateKey($key);
 
@@ -89,7 +92,8 @@ class RSAUtil
      *
      * @return bool
      */
-    public static function verify(string $data, string $sign, string $key, $encodeMod = 'RSA'){
+    public static function verify(string $data, string $sign, string $key, $encodeMod = 'RSA')
+    {
 
         $rsakey = self::getPublicKey($key);
 
@@ -118,7 +122,8 @@ class RSAUtil
      *
      * @return bool|string
      */
-    public static function SslEncrypt(string $data,string $key, $type = 'private'){
+    public static function SslEncrypt(string $data,string $key, $type = 'private')
+    {
 
         $rsakey = ($type == 'private') ? self::getPrivateKey($key) : self::getPublicKey($key);
 
@@ -147,7 +152,8 @@ class RSAUtil
      *
      * @return bool
      */
-    public static function SslDecrypt(string $data,string $key, $type = 'private'){
+    public static function SslDecrypt(string $data,string $key, $type = 'private')
+    {
 
         $rsakey = ($type == 'private') ? self::getPrivateKey($key) : self::getPublicKey($key);
 
