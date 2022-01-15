@@ -24,7 +24,8 @@ class RefundQuery extends JoinPayRequest
      * @param $val
      * @return $this
      */
-    public function setVerison($val){
+    public function setVerison($val)
+    {
         $this->params['p3_Version'] = $val;
         return $this;
     }
@@ -34,7 +35,8 @@ class RefundQuery extends JoinPayRequest
      * @param $val
      * @return $this
      */
-    public function setRefundOrderNo($val){
+    public function setRefundOrderNo($val)
+    {
         $this->params['p2_RefundOrderNo'] = $val;
         return $this;
     }
